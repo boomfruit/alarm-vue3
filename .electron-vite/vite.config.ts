@@ -4,6 +4,8 @@ import vuePlugin from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import userConfig from '../config'
 
+import unocss from 'unocss/vite'
+import { presetIcons } from 'unocss'
 const IsWeb = process.env.BUILD_TARGET === 'web'
 
 function resolve(dir: string) {
@@ -38,7 +40,18 @@ export default defineConfig({
     },
     plugins: [
         vueJsx(),
-        vuePlugin()
+        vuePlugin(),
+        unocss({
+          rules:[
+            [/^m-(\d+)$/, ([, d]) => ({ margin: `${Number(d) * 10}px` })],
+            ['flex', { display: "flex" }],
+            ['pink', { color: 'pink' }]
+          ],
+          presets:[presetIcons()],
+          shortcuts: {
+            btn: "pink flex"
+          }
+      })
     ],
     optimizeDeps: {
     },

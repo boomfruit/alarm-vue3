@@ -6,6 +6,8 @@
         <span class="title">
           {{ $t("welcome") }}
         </span>
+        <div class="i-ic-baseline-backspace text-3xl bg-green-500" />
+        <div class="btn">btn</div>
         <system-information></system-information>
       </div>
 
@@ -224,10 +226,9 @@ function CheckUpdate(data) {
 }
 function openPreloadWindow() {
   ElMessageBox.alert("请移步项目的strict分支", "提示", {
-      confirmButtonText: "确定",
-      callback: (action) => {
-      },
-    });
+    confirmButtonText: "确定",
+    callback: (action) => {},
+  });
 }
 
 function handleClose() {

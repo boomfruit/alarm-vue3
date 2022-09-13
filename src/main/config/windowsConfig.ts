@@ -3,11 +3,12 @@ import { BrowserWindowConstructorOptions } from 'electron';
 import { preloadPath } from './StaticPath';
 
 export const mainWindowConfig: BrowserWindowConstructorOptions = {
-    height: 800,
+    height: 1080,
     useContentSize: true,
-    width: 1700,
-    minWidth: 1366,
-    show: false,
+    width: 1920,
+    minWidth: 1080,
+    fullscreen:true,
+    // show: false,
     frame: config.IsUseSysTitle,
     webPreferences: {
         contextIsolation: false,

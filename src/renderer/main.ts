@@ -9,6 +9,8 @@ import router from './router'
 import { errorHandler } from './error'
 import store from './store'
 
+import 'uno.css'
+
 import { i18n } from "./i18n"
 
 import TitleBar from "./components/common/TitleBar.vue"
